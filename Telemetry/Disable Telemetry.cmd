@@ -7,11 +7,11 @@ if not "%~1"=="am_admin" (
 
 
 :: services
-sc config DiagTrack start=disabled
+sc config DiagTrack start= disabled
 
 :: scheduled tasks
-schtasks /change /tn "Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser" /disable
-schtasks /change /tn "Microsoft\Windows\Application Experience\ProgramDataUpdater" /disable
+schtasks /change /tn "Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser Exp" /disable
+REM schtasks /change /tn "Microsoft\Windows\Application Experience\ProgramDataUpdater" /disable
 schtasks /change /tn "Microsoft\Windows\Autochk\Proxy" /disable
 schtasks /change /tn "Microsoft\Windows\Customer Experience Improvement Program\Consolidator" /disable
 schtasks /change /tn "Microsoft\Windows\Customer Experience Improvement Program\UsbCeip" /disable
@@ -48,5 +48,5 @@ reg add "HKLM\SOFTWARE\Microsoft\Windows\Windows Error Reporting" /v "Disabled" 
 
 echo.
 echo Finished, please reboot your device.
-pause > nul
+pause
 exit /b
